@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Reparație - Fix It Cahul</title>
+    <meta name="description" content="Verifică statusul reparației telefonului tău. Fix It Cahul.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3"
+        style="background-color: #111111; border-bottom: 3px solid #2b2e32;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase" href="index.html"
+                style="font-size: 22px; letter-spacing: 0.5px;">
+                <img src="img/imagine1.png" alt="Fix It Logo" height="40" class="me-2">
+                <span>FIX <span style="color: #00C853;">IT</span></span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-bold text-uppercase" style="font-size: 13px; letter-spacing: 0.5px;">
+                    <li class="nav-item px-2"><a class="nav-link" href="index.html">Acasă</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" href="services.html">Servicii</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" href="prices.html">Prețuri</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" href="about.html">Despre noi</a></li>
+                    <li class="nav-item px-2"><a class="nav-link active" href="status.html"
+                            style="color: #00C853 !important;">Status Reparație</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 text-white" style="background: linear-gradient(135deg, #111111 50%, #0d47a1 100%);">
+        <div class="container py-5">
+            <h1 class="display-4 fw-black mb-3 text-uppercase"
+                style="font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
+                Status Reparație <br><span style="color: #00C853;">Verifică Progresul</span>
+            </h1>
+            <p class="fs-5 text-white-50" style="max-width: 700px;">
+                Introdu codul reparației pentru a vedea statusul dispozitivului tău.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-5">
+                            <h2 class="fw-bold text-center mb-4" style="font-family: 'Montserrat', sans-serif;">Căutare
+                                Reparație</h2>
+
+                            <div class="input-group input-group-lg">
+                                <input type="text" id="repairCode" class="form-control border-1"
+                                    placeholder="Introdu codul reparației (ex: REP-2026-001)">
+                                <button class="btn btn-success fw-bold border-0" type="button" id="searchBtn"
+                                    style="background-color: #00C853;">
+                                    <i class="fas fa-search me-2"></i>Caută
+                                </button>
+                            </div>
+                            <small class="text-muted d-block mt-3 text-center">
+                                Codul reparației ți-a fost furnizat la recepția dispozitivului.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultContainer" style="display: none;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h3 class="fw-bold mb-0" id="repairDevice">Nume Dispozitiv</h3>
+                                    <span class="status-badge" id="repairStatus">
+                                    </span>
+                                </div>
+
+                                <div class="row g-3 mb-5">
+                                    <div class="col-md-6">
+                                        <p class="text-muted small mb-1">Cod Reparație</p>
+                                        <p class="fw-bold" id="displayCode">-</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="text-muted small mb-1">Data Recepție</p>
+                                        <p class="fw-bold">-</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="text-muted small mb-1">Serviciu</p>
+                                        <p class="fw-bold" id="repairService">-</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="text-muted small mb-1">Preț Estimat</p>
+                                        <p class="fw-bold" style="color: #00C853;">-</p>
+                                    </div>
+                                </div>
+
+                                <h5 class="fw-bold mb-3">Progres Reparație</h5>
+                                <div id="statusTimeline"></div>
+
+                                <div class="alert alert-info mt-4"
+                                    style="background-color: #e3f2fd; border-color: #1976D2;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="notFoundContainer" style="display: none;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="alert alert-warning" style="background-color: #fff3cd; border-color: #ffc107;">
+                            <h5 class="alert-heading fw-bold">
+                                <i class="fas fa-exclamation-triangle me-2"></i>Niciun rezultat
+                            </h5>
+                            <p class="mb-0">Codul de reparație nu a fost găsit. Te rugăm să verifici codul și încearcă
+                                din nou.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-5 text-white" style="background-color: #1a1a1a;">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5" style="font-family: 'Montserrat', sans-serif; font-size: 32px;">
+                Statusuri Posibile
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div
+                            style="width: 80px; height: 80px; margin: 0 auto 15px; background: rgba(255, 193, 7, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-inbox" style="font-size: 32px; color: #ffc107;"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2" style="color: #ffc107;">În Așteptare</h6>
+                        <p class="text-white-50 small">Dispozitivul așteaptă diagnosticare</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div
+                            style="width: 80px; height: 80px; margin: 0 auto 15px; background: rgba(25, 118, 210, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-tools" style="font-size: 32px; color: #1976D2;"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2" style="color: #1976D2;">În Reparație</h6>
+                        <p class="text-white-50 small">Reparația este în curs</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div
+                            style="width: 80px; height: 80px; margin: 0 auto 15px; background: rgba(0, 200, 83, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-check-circle" style="font-size: 32px; color: #00C853;"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2" style="color: #00C853;">Gata</h6>
+                        <p class="text-white-50 small">Dispozitivul poate fi ridicat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white pt-5 pb-4" style="background-color: #111111; border-top: 3px solid #1976D2;">
+        <div class="container">
+            <div class="row g-4 mb-4">
+
+                <div class="col-lg-4 text-center text-md-start">
+                    <h5 class="fw-bold mb-3 text-uppercase d-flex align-items-center justify-content-center justify-content-md-start"
+                        style="letter-spacing: 0.5px;">
+                        <img src="img/logo.png" alt="Fix It" height="32" class="me-2">FIX <span
+                            style="color: #00C853;">IT</span>
+                    </h5>
+                    <p class="small text-white-50 lh-lg" style="max-width: 350px;">
+                        Suntem un centru tehnologic de reparații dedicat standardelor înalte de execuție. Deservim
+                        comunitatea din Cahul cu servicii rapide, sigure și de lungă durată.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-2 text-center text-md-start">
+                    <h5 class="fw-bold mb-3 text-uppercase small tracking-wider" style="color: #1976D2;">Hartă Site</h5>
+                    <ul class="list-unstyled mb-0 row g-2 small" style="padding-left: 0;">
+                        <div class="col-6 col-md-12">
+                            <li><a href="index.html"
+                                    class="text-white-50 text-decoration-none footer-link d-block mb-1">Acasă</a></li>
+                            <li><a href="services.html"
+                                    class="text-white-50 text-decoration-none footer-link d-block mb-1">Servicii</a>
+                            </li>
+                            <li><a href="prices.html"
+                                    class="text-white-50 text-decoration-none footer-link d-block mb-1">Tarife</a></li>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <li><a href="about.html"
+                                    class="text-white-50 text-decoration-none footer-link d-block mb-1">Despre noi</a>
+                            </li>
+                            <li><a href="status.html"
+                                    class="text-white-50 text-decoration-none footer-link d-block mb-1">Verificări</a>
+                            </li>
+                            <li><a href="contact.html"
+                                    class="text-white-50 text-decoration-none footer-link d-block">Contact</a></li>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3 text-center text-md-start">
+                    <h5 class="fw-bold mb-3 text-uppercase small tracking-wider" style="color: #1976D2;">Informații
+                        Centru</h5>
+                    <p class="small text-white-50 mb-2"><i class="fas fa-map-marker-alt text-success me-2"
+                            style="color: #00C853 !important;"></i> Or. Cahul, Republica Moldova</p>
+                    <p class="small text-white-50 mb-2"><i class="fas fa-phone-alt text-success me-2"
+                            style="color: #00C853 !important;"></i> +373 6X XX XX XX</p>
+                    <p class="small text-white-50 mb-2"><i class="fas fa-envelope text-success me-2"
+                            style="color: #00C853 !important;"></i> suport@fixit.md</p>
+                    <p class="small text-white-50"><i class="fas fa-clock text-success me-2"
+                            style="color: #00C853 !important;"></i> Luni - Vineri: 09:00 - 18:00</p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 text-center text-md-start">
+                    <h5 class="fw-bold mb-3 text-uppercase small tracking-wider" style="color: #1976D2;">Locația Noastră
+                        (Cahul)</h5>
+                    <div class="position-relative shadow-sm rounded overflow-hidden"
+                        style="height: 150px; border: 2px solid #2b2e32;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2757.7346144887375!2d28.187383176884024!3d46.30514197113411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b65cae6fbc6db7%3A0x673cae7a1753efef!2sCahul%2C%20Moldova!5e0!3m2!1sro!2s!4v1717840000000!5m2!1sro!2s"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="my-4" style="background-color: rgba(255,255,255,0.1); border: 0; height: 1px;">
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center small text-white-50">
+                <div>&copy; 2026 Fix It. Toate drepturile rezervate.</div>
+                <div class="mt-2 mt-sm-0 text-success fw-semibold" style="color: #00C853 !important;">Proiect elaborat
+                    de Daniel Macovei - Grupa AAW 2331</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bundle.min.js"></script>
+    <script src="/js/status.js"></script>
+</body>
+
+</html>
