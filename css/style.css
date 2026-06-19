@@ -92,13 +92,13 @@ h1, h2, h3, h4, h5, h6 {
 /* STRUCTURĂ CARUSEL (Wrapper, Zona & Grid)*/
 
 .carusel-wrapper {
-    max-width: 1320px;
+    max-width: 1304px; /* Valoarea exactă pentru 5 carduri și 4 spații */
     width: 100%;
     margin: 0 auto;
-    padding: 15px 12px;
-    overflow: hidden; /* Ascunde cardurile care ies în afara containerului */
+    padding: 15px 0; /* Am setat padding-ul lateral la 0 pentru a păstra alinierea perfectă la pixeli */
+    overflow: hidden; /* Ascunde complet al 6-lea card până când se dă drag */
     clip-path: inset(0 0 0 0);
-    user-select: none; /* Oprește selectarea textului când utilizatorul trage de carusel */
+    user-select: none;
     -webkit-user-select: none;
 }
 
