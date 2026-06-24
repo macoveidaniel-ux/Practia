@@ -1,51 +1,49 @@
-/*CONFIGURĂRI GENERALE & RESETĂRI*/
-
 :root {
-    
-    --primary-tech: #1976D2;     
-    --accent-color: #00C853;     
-    --dark-bg: #111111;          
-    --card-apple-bg: #1e1e1e;     
-    --font-titles: 'Montserrat', sans-serif; 
-    --font-body: 'Roboto', sans-serif;       
+    --primary-tech: #1976D2;
+    --accent-color: #00C853;
+    --dark-bg: #111111;
+    --card-apple-bg: #1e1e1e;
+    --font-titles: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Include bordurile și padding-ul în lățimea totală a elementelor */
+    box-sizing: border-box;
 }
 
 body {
     font-family: var(--font-body);
     font-size: 16px;
     color: #333333;
-    overflow-x: hidden;     /* Previne apariția barei de scroll orizontale pe ecrane mici */
+    overflow-x: hidden;
     background-color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-titles); /* Aplică fontul Montserrat pe toate titlurile */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-titles);
 }
-
-
-/*NAVBAR & HEADER STYLING*/
 
 .navbar {
     background-color: var(--dark-bg);
-    border-bottom: 3px solid #2b2e32; /* Linie fină de delimitare sub meniu */
+    border-bottom: 3px solid #2b2e32;
 }
 
 .navbar-nav .nav-link {
     font-size: 13px;
     letter-spacing: 0.5px;
-    transition: color 0.2s ease; /* Tranziție lină la schimbarea culorii textului */
+    transition: color 0.2s ease;
 }
 
 .header-hero {
-    /* Fundal modern în gradient de la negru la un albastru închis */
     background: linear-gradient(135deg, #111111 50%, #0d47a1 100%);
-    min-height: 65vh; /* Ocupă minimum 65% din înălțimea ecranului */
+    min-height: 65vh;
 }
 
 .main-title {
@@ -62,15 +60,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .image-float {
     max-height: 300px;
-    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.25)); /* Efect de umbră realist pentru imagine */
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.25));
 }
-
-
-/*SECTIUNEA CARUSEL HARDWARE & SOFTWARE*/
 
 .categorii-servicii {
     padding: 60px 0;
-    background-color: #f9f9f9; /* Fundal gri deschis pentru contrast */
+    background-color: #f9f9f9;
     font-family: var(--font-titles);
 }
 
@@ -83,20 +78,17 @@ h1, h2, h3, h4, h5, h6 {
 .linie-separatoare {
     width: 60px;
     height: 3px;
-    background-color: var(--primary-tech); /* Linia decorativă în culoarea principală */
+    background-color: var(--primary-tech);
     margin-top: 10px;
     border-radius: 2px;
 }
 
-
-/* STRUCTURĂ CARUSEL (Wrapper, Zona & Grid)*/
-
 .carusel-wrapper {
-    max-width: 1304px; /* Valoarea exactă pentru 5 carduri și 4 spații */
+    max-width: 1304px;
     width: 100%;
     margin: 0 auto;
-    padding: 15px 0; /* Am setat padding-ul lateral la 0 pentru a păstra alinierea perfectă la pixeli */
-    overflow: hidden; /* Ascunde complet al 6-lea card până când se dă drag */
+    padding: 15px 0;
+    overflow: hidden;
     clip-path: inset(0 0 0 0);
     user-select: none;
     -webkit-user-select: none;
@@ -109,14 +101,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .grid-categorii {
-    display: flex; /* Aliniază cardurile în linie orizontală */
+    display: flex;
     align-items: stretch;
-    gap: 16px; /* Spațiul constant dintre carduri */
-    width: max-content; /* Permite gridului să se întindă pe orizontală oricât e nevoie */
+    gap: 16px;
+    width: max-content;
 }
-
-
-/* STILIZARE CARDURI*/
 
 .item-categorie-dreptunghi {
     display: flex;
@@ -127,45 +116,37 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--card-apple-bg);
     color: #ffffff;
     width: 248px;
-    flex-shrink: 0; /* Împiedică micșorarea forțată a cardurilor în flexbox */
+    flex-shrink: 0;
     min-height: 220px;
     padding: 30px 15px;
     border-radius: 16px;
     border: 1px solid #2d2d2d;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Tranziții line pentru toate proprietățile modificate la hover */
     transition: transform 0.4s ease,
-                box-shadow 0.4s ease,
-                border-color 0.4s ease,
-                background 0.4s ease;
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
 }
 
-/* Efect la trecerea mouse-ului peste card (Ridicarea cardului și iluminare verde) */
 .item-categorie-dreptunghi:hover {
-    transform: translateY(-10px); /* Ridică cardul cu 10 pixeli */
+    transform: translateY(-10px);
     background: #252525;
-    border-color: var(--accent-color); /* Bordura devine verde */
-    /* Efect de glow (iluminare) combinat cu umbra de adâncime */
+    border-color: var(--accent-color);
     box-shadow: 0 20px 40px rgba(0, 200, 83, 0.2),
-                0 8px 16px rgba(0, 0, 0, 0.3);
+        0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Efect în momentul în care se dă click pe card */
 .item-categorie-dreptunghi:active {
     transform: translateY(-4px);
     transition: transform 0.1s ease;
 }
 
-/* Stil aplicat din JavaScript când cardul este tras cu mouse-ul */
 .item-categorie-dreptunghi.dragging {
     opacity: 0.3;
     transform: scale(0.95);
-    border: 2px dashed var(--primary-tech); /* Bordură punctată albastră în timpul mutării */
+    border: 2px dashed var(--primary-tech);
 }
-
-
-/*ICONIȚE & ELEMENTE DE TEXT DIN INTERIORUL CARDULUI*/
 
 .container-iconita {
     display: flex;
@@ -173,14 +154,13 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     width: 64px;
     height: 64px;
-    background: rgba(0, 200, 83, 0.1); /* Fundal verde cu opacitate foarte mare */
-    border-radius: 50%; /* Formă de cerc perfect */
+    background: rgba(0, 200, 83, 0.1);
+    border-radius: 50%;
     margin-bottom: 20px;
     flex-shrink: 0;
     transition: transform 0.4s ease, background 0.4s ease;
 }
 
-/* Mărește cercul iconiței când punem mouse-ul pe card */
 .item-categorie-dreptunghi:hover .container-iconita {
     transform: scale(1.15);
     background: rgba(0, 200, 83, 0.2);
@@ -188,11 +168,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .container-iconita i {
     font-size: 26px;
-    color: var(--accent-color); /* Iconița primește culoarea verde de accent */
+    color: var(--accent-color);
     transition: transform 0.4s ease;
 }
 
-/* Efect de micro-zoom pe iconița din interior */
 .item-categorie-dreptunghi:hover .container-iconita i {
     transform: scale(1.1);
 }
@@ -231,83 +210,80 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-carusel {
-    display: none !important; /* Ascunde butoanele standard, navigarea fiind de tip drag */
+    display: none !important;
 }
-
-
-/*FOOTER STYLING*/
 
 footer {
     background-color: var(--dark-bg);
-    border-top: 3px solid var(--primary-tech); /* Linie superioară de branding */
+    border-top: 3px solid var(--primary-tech);
 }
 
 .footer-link {
     transition: color 0.2s ease;
 }
 
-/* Linkurile din footer devin verzi la trecerea cursorului */
 .footer-link:hover {
     color: var(--accent-color) !important;
 }
 
-
-/*STATUS REPARAȚII (Pentru pagina status.html)*/
-
 .status-badge {
     padding: 8px 16px;
-    border-radius: 25px; /* Formă de pastilă */
+    border-radius: 25px;
     font-weight: bold;
     font-size: 12px;
     display: inline-block;
     text-transform: uppercase;
 }
 
-/* Stări de culori diferite în funcție de stadiul tehnic al telefonului */
-.status-pending { background-color: #fff3cd; color: #856404; } /* Galben - În așteptare */
-.status-progress { background-color: #d1ecf1; color: #0c5460; } /* Albastru - În lucru */
-.status-ready { background-color: #d4edda; color: #155724; }    /* Verde - Finalizat/Gata */
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-progress {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-ready {
+    background-color: #d4edda;
+    color: #155724;
+}
 
 .timeline-item {
     padding: 15px;
-    border-left: 3px solid var(--accent-color); /* Linie verticală verde în stânga */
+    border-left: 3px solid var(--accent-color);
     margin-bottom: 15px;
     background-color: #f8f9fa;
     border-radius: 4px;
 }
 
-/* Evidențiază etapa curentă din procesul de reparație prin fundal albastru */
 .timeline-item.active {
     border-left-color: var(--primary-tech);
     background-color: #e3f2fd;
 }
 
-
-/*RESPONSIVITATE*/
-
-/* Pentru ecrane de laptop-uri medii și mici */
 @media (max-width: 1400px) {
     .carusel-wrapper {
         max-width: 100%;
         padding: 15px 20px;
     }
-    /* Calculează dinamic lățimea pentru ca pe ecran să încapă exact 5 carduri egale */
+
     .item-categorie-dreptunghi {
         width: calc((100vw - 40px - 4 * 16px) / 5);
     }
 }
 
-/* Pentru tablete în mod landscape/portret */
 @media (max-width: 1024px) {
     .grid-categorii {
         width: max-content;
     }
+
     .item-categorie-dreptunghi {
-        width: 220px; /* Cardurile devin puțin mai înguste */
+        width: 220px;
     }
 }
 
-/* Pentru ecrane mici de tablete și telefoane mari */
 @media (max-width: 768px) {
     .item-categorie-dreptunghi {
         width: 200px;
@@ -315,13 +291,13 @@ footer {
     }
 }
 
-/* Pentru telefoane mobile comune (ecrane foarte înguste) */
 @media (max-width: 600px) {
     .carusel-wrapper {
         padding: 15px 8px;
     }
+
     .item-categorie-dreptunghi {
-        width: 180px;       /* Lățime minimă adaptată pentru ecrane de telefon */
-        min-height: 190px;  /* Înălțime redusă proporțional */
+        width: 180px;
+        min-height: 190px;
     }
 }
