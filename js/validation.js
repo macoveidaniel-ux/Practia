@@ -1,4 +1,3 @@
-
 class FormValidator {
     constructor(onSuccessCallback = null) {
         this.forms = document.querySelectorAll('form');
@@ -91,6 +90,8 @@ class FormValidator {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (!window.customFormValidator) {
-        window.customFormValidator = new FormValidator();
+        window.customFormValidator = new FormValidator((e, form) => {
+            alert('Formularul a fost transmis cu succes!');
+        });
     }
 });
