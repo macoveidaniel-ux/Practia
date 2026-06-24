@@ -1,10 +1,7 @@
-// =========================================
-// CALCULATOR JS - Estimator prețuri dinamic
-// =========================================
+
 
 class PriceCalculator {
     constructor() {
-        // Moneda implicită: MDL (Republica Moldova)
         this.services = {
             'ecran': { min: 400, max: 2500, name: 'Înlocuire Ecran' },
             'baterie': { min: 300, max: 1200, name: 'Înlocuire Baterie' },
@@ -15,7 +12,7 @@ class PriceCalculator {
         };
 
         this.discounts = {
-            'client-loyal': 0.20 // 20% reducere
+            'client-loyal': 0.20 
         };
 
         this.init();
@@ -26,7 +23,6 @@ class PriceCalculator {
     }
 
     createCalculatorWidget() {
-        // Verificăm dacă widget-ul există deja pentru a evita duplicarea accidentală
         if (document.getElementById('priceCalculator')) return;
 
         const calculator = document.createElement('div');
@@ -94,14 +90,12 @@ class PriceCalculator {
         const serviceSelect = document.getElementById('serviceSelect');
         const loyalCheckbox = document.getElementById('loyalClient');
 
-        // Deschidere panou și ascundere buton flotant pentru un aspect curat
         openBtn.addEventListener('click', () => {
             panel.style.display = 'block';
             openBtn.style.transform = 'scale(0)';
             setTimeout(() => { openBtn.style.display = 'none'; }, 200);
         });
 
-        // Închidere panou și reafișare buton flotant
         closeBtn.addEventListener('click', () => {
             panel.style.display = 'none';
             openBtn.style.display = 'flex';
@@ -125,7 +119,6 @@ class PriceCalculator {
         }
 
         const serviceInfo = this.services[service];
-        // Calculăm o medie realistă între prețul minim și maxim din nomenclator
         const avgPrice = (serviceInfo.min + serviceInfo.max) / 2;
 
         let finalPrice = avgPrice;
@@ -146,7 +139,6 @@ class PriceCalculator {
     }
 }
 
-// Inițializare script la încărcarea documentului
 document.addEventListener('DOMContentLoaded', () => {
     new PriceCalculator();
 });

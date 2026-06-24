@@ -87,11 +87,3 @@ class FormValidator {
         return isValid;
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (!window.customFormValidator) {
-        window.customFormValidator = new FormValidator((e, form) => {
-            alert('Formularul a fost transmis cu succes!');
-        });
-    }
-});
